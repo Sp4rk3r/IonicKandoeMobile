@@ -1,0 +1,52 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col col-8>
+      <img src="assets/imgs/KandoeCircleLogin.png"/>
+    </ion-col>
+    <ion-col></ion-col>
+
+  </ion-row>
+  <div class="login-box">
+    <div class="wrongCredentials" *ngIf="wrongCred" >
+      U hebt verkeerde gegevens ingevuld!
+    </div>
+
+    <form (ngSubmit)="login3()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+
+            <ion-item>
+              <ion-label><ion-icon name="md-contact"></ion-icon></ion-label>
+              <ion-input type="text" placeholder="Gebruikersnaam" name="email" [(ngModel)]="usernametext" required autofocus><ion-icon name="md-contact"></ion-icon></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label><ion-icon name="ios-key"></ion-icon></ion-label>
+              <ion-input type="password" placeholder="Wachtwoord" name="password" [(ngModel)]="passwordtext" required><ion-icon name="md-contact"></ion-icon></ion-input>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+        </ion-col>
+      </ion-row>
+    </form>
+    <ion-row>
+      <ion-col class="signup-col">
+        <button ion-button class="register-btn" block clear (click)="createAccount()">Registreer</button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

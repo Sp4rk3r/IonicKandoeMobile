@@ -1,0 +1,135 @@
+page-chat {
+  width: 300px;
+  .home {
+    background:  #cccccc;
+  }
+
+  .popover {
+    max-width: 100%;
+  }
+
+  ion-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .chat-container{
+    height: 100%;
+    width: 100vw;
+    margin-left: 2vw;
+  }
+  .chat2{
+    text-align: right;
+    margin: 0 auto;
+    background: #cccccc;
+
+  }
+
+  .chat {
+    margin: 2vw;
+    float: left;
+    position: relative;
+    color: black;
+    background: white;
+    width: 60%;
+    text-align: left;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .messageContains {
+    float: right;
+    position: relative;
+    color: white;
+    text-align: left;
+    margin: 2vw;
+    background-color: rgba(21,143,254,0.68);
+    border: black 1px;
+    width: 60%;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .messageContains2 {
+    float: right;
+    position: relative;
+    color: white;
+    text-align: left;
+    margin: 2vw;
+    background-color: rgba(21,143,254,0.68);
+    border: black 1px;
+    width: 60%;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .timeStamp {
+    float: right;
+    position: relative;
+    color: black;
+    text-align: left;
+    width: 60%;
+
+  }
+
+  .notUserContains {
+    margin: 2vw;
+    float: left;
+    position: relative;
+    color: black;
+    background: white;
+    width: 60%;
+    text-align: left;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .notUserContains2 {
+    margin: 2vw;
+    float: left;
+    position: relative;
+    color: black;
+    background: white;
+    width: 60%;
+    text-align: left;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .footer{
+    background: #cccccc;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    //height: 5vh;
+    width: 100vw;
+  }
+
+  ion-footer {
+    background: #cccccc;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    height: 10vh;
+    width: 100vw;
+  }
+
+  input{
+    float: left;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 1.5em;
+    width: 90%;
+    margin-top: 1%;
+    //left: 5px;
+  }
+  .send{
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-top: 1%;
+    //margin-left: 5px;
+
+  }
+
+}

@@ -1,0 +1,36 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="dark" [hideBackButton]="false">
+    <ion-buttons align-self-start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title align-title="center">Welkom {{user.username}}!</ion-title>
+    <ion-buttons end>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content #content class="home">
+    <div class="chat2">
+      <div class="message" *ngFor="let currentmessage of message">
+        <div class="messageContains" *ngIf="currentmessage.message.includes(username)">{{currentmessage.message}}</div>
+        <div class="notUserContains" style="position: relative; float: left; background: white; width: 60%; margin: 2vw; text-align: left; border-radius: 10px; padding: 5px" *ngIf="!currentmessage.message.includes(username)">{{currentmessage.message}}</div>
+      </div>
+    </div>
+</ion-content>
+<ion-footer>
+  <div class="send-button">
+    <input placeholder="  Typ hier je Bericht..."  id="input" type="text" #input (keyup.enter)="sendMessage(input.value)">
+    <button class="send" clear ion-button icon-only (click)="sendMessage(input.value)"><ion-icon name="send"></ion-icon></button>
+  </div>
+</ion-footer>
+
+
+

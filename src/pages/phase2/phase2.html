@@ -1,0 +1,56 @@
+<!--
+  Generated template for the Phase2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="dark" [hideBackButton]="false">
+    <ion-buttons align-self-start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title align-title="center">{{session.name}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-title *ngIf="selectedCard.name !== ''">Geselecteerde kaart: {{selectedCard.name}}</ion-title>
+  <div *ngFor="let card of sessionCards; let i = index ">
+    <ion-card>
+      <progress  max="{{session.totalRounds}}" value="{{card.priority}}" class="node-js">
+      </progress>
+      <ion-card-content>
+        <ion-title>{{card.name}}</ion-title>
+        <div class="descriptionContainer">{{card.description}}</div>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button [disabled]="!isMyTurn" ion-button icon-left clear small (click)="selectCard(card,i)">
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{card.priority}} likes</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+  </div>
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="openMondal(session.id)"><ion-icon name="ios-chatbubbles"></ion-icon></button>
+  </ion-fab>
+</ion-content>
+
+
+<ion-footer color="dark">
+  <ion-navbar color="dark">
+       <button ion-button outline full color="light" [disabled]="!isMyTurn" (click)="confirmMoveCard()">Beëindig beurt</button>
+  </ion-navbar>
+</ion-footer>
+
+

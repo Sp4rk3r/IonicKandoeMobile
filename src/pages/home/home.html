@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar color="dark" [hideBackButton]="false">
+    <ion-buttons align-self-start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title align-title="center">Welkom, {{user.username}}!</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home" padding>
+  <ion-title>Actieve Sessie's</ion-title>
+  <div *ngFor="let session of currentSessions" class="sessionBox">
+    <ion-card *ngIf="session.state === 1">
+      <img class="backImage" src="assets/imgs/vakantie.jpg">
+      <div class="card-title">{{session.name}}</div>
+      <button ion-button (click)="EnterSessie(session)" full>Hervat</button>
+    </ion-card>
+    <ion-card *ngIf="session.state === 2">
+      <img class="backImage" src="assets/imgs/vakantie.jpg">
+      <div class="card-title">{{session.name}}</div>
+      <button ion-button (click)="EnterSessie(session)" full>Hervat</button>
+    </ion-card>
+    <ion-card *ngIf="session.state === 3">
+      <img class="backImage" src="assets/imgs/vakantie.jpg">
+      <div class="card-title">{{session.name}}</div>
+      <button ion-button color="secondary" (click)="EnterSessie(session)" full>Hervat</button>
+    </ion-card>
+  </div>
+  <div *ngIf="currentSessions.length == 0">
+    <ion-card>
+      <div class="card-title">U hebt geen Actieve Sessie's</div>
+    </ion-card>
+  </div>
+  <ion-title>Geplande Sessie's</ion-title>
+  <div *ngFor="let session of plannedSessions" class="sessionBox">
+    <ion-card>
+      <img class="backImage" src="assets/imgs/bezienswaardigheden.jpg">
+      <div class="card-title">{{session.name}}</div>
+      <div class="card-subtitle">{{session.startDate | date: 'dd/MM/yyyy/hh:mm'}}</div>
+    </ion-card>
+  </div>
+  <div *ngIf="plannedSessions.length == 0">
+    <ion-card>
+      <div class="card-title">U hebt geen Actieve Sessie's</div>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer color="dark">
+  <ion-navbar color="dark">
+    <ion-buttons>
+      <div text-center>
+        <button ion-button (click)="GoToSessionDone()">Afgelopen Sessie's</button>
+      </div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-footer>
+
+
