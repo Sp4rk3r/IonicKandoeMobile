@@ -1,4 +1,3 @@
-import {SessionState} from "./SessionState";
 import {SessionCard} from "./sessionCard";
 
 export class Session {

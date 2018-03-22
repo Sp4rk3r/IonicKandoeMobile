@@ -4,7 +4,5 @@ export class SessionCard {
               public description: string,
               public image: string,
               public priority: number,
-              public distance: number,
-              public x: number,
-              public y: number) {}
+              public distance: number,) {}
 }

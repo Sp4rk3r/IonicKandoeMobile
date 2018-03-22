@@ -11,7 +11,6 @@ import * as Stomp from 'stompjs';
 import {SessionCard} from "../../model/sessionCard";
 import {LoginPage} from "../login/login";
 import {AuthServiceProvider} from "../../providers/auth-service/auth-service";
-import {Ring} from "../../model/ring";
 import {MenuPage} from "../menu/menu";
 
 /**
@@ -34,7 +33,7 @@ export class Phase2Page{
   public userId;
   public session = new Session(0, '', 0, 0, 0, 0, 0, [''], [''], [], [], 0, [], null, false, new Date(), false, 0,  0);
   public cards = [];
-  public selectedCard = new SessionCard(null, '', '', '', 0, 0, 0, 0);
+  public selectedCard = new SessionCard(null, '', '', '', 0, 0, );
   @Input() sessionCards;
   @Input() currentUserTurnId;
   public isMyTurn = true;

@@ -1,7 +1,6 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Session} from "../../model/session";
-import {SessionState} from "../../model/SessionState";
 import {JwtHelper} from "angular2-jwt";
 import {Observable} from "rxjs/Observable";
 import {SessionCard} from "../../model/sessionCard";
